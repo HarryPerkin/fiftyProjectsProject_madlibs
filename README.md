@@ -7,7 +7,8 @@
 3. Offers the user a chance to play again.
 
 ### To Do:
-1. Add a fun ASCII art logo by getting window width and printing to its centre.
+~~1. Add a fun ASCII art logo by getting window width and printing to its centre.~~
+
 2. Add more madlib sentence templates.
 
 ### Bugs:
