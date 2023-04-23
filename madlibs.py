@@ -1,6 +1,19 @@
 # A game of madlibs.
 
-#TODO Print ASCII art of "Madlibs!"
+import os
+width = os.get_terminal_size().columns #Gets the width of the console in characters.
+
+logo = [
+"::::    ::::      :::     :::::::::  :::        ::::::::::: :::::::::   ::::::::  ::: ",
+"+:+:+: :+:+:+   :+: :+:   :+:    :+: :+:            :+:     :+:    :+: :+:    :+: :+: ",
+"+:+ +:+:+ +:+  +:+   +:+  +:+    +:+ +:+            +:+     +:+    +:+ +:+        +:+ ",
+"+#+  +:+  +#+ +#++:++#++: +#+    +:+ +#+            +#+     +#++:++#+  +#++:++#++ +#+ ",
+"+#+       +#+ +#+     +#+ +#+    +#+ +#+            +#+     +#+    +#+        +#+ +#+ ",
+"#+#       #+# #+#     #+# #+#    #+# #+#            #+#     #+#    #+# #+#    #+#     ",
+"###       ### ###     ### #########  ########## ########### #########   ########  ### "]
+
+for i in logo: # Prints the logo to the center of the console.
+	print(i.center(width))
 
 import random
 plays = 0 # counts the number of games the user has played.
@@ -24,14 +37,14 @@ def play():
         else:
             placeholder = "/" + str(i + 1)
             newSentence = newSentence.replace(placeholder, inputs[i])        
-    print(newSentence)
+    print(newSentence.center(width))
     
     # Increments the number of rounds the user has played:
     global plays
     plays += 1
 
 
-while True: #TODO: Correctly validate input to avoid false positives.
+while True: # Asks the player to play again or to quit:
     if plays > 0:
         answer = ""
         while answer != "y" or answer != "q":
